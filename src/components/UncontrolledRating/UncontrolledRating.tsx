@@ -29,13 +29,13 @@ export function UncontrolledRating(props: RatingPropsType) {
 
 type StarPropsType = {
     selected: boolean
-    setValue: () => void
+    setValue: (value: 1 | 2 | 3 | 4 | 5) => void
 }
 
 function Star(props: StarPropsType) {
 
     return <span onClick={() => {
-        props.setValue()
+        props.setValue(1)
     }}>
         {props.selected ? <b>star </b> : 'star '}
     </span>
