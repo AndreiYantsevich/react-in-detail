@@ -1,42 +1,42 @@
-import {useState} from "react";
+import {useState} from 'react';
 
 
 type OnOffPropsType = {
     onChange: (on: boolean) => void
 }
 
-export function UncontrolledOnOff(props: OnOffPropsType) {
+export const UncontrolledOnOff = (props: OnOffPropsType) => {
 
 
     let [on, setOn] = useState(false)  //hook
 
     const onStyle = {
-        width: "50px",
-        height: "30px",
-        border: "1px solid black",
-        display: "inline-block",
-        padding: "2px",
-        backgroundColor: on ? "green" : "white"
+        width: '50px',
+        height: '30px',
+        border: '1px solid black',
+        display: 'inline-block',
+        padding: '2px',
+        backgroundColor: on ? 'green' : 'white'
     }
 
     const offStyle = {
-        width: "50px",
-        height: "30px",
-        border: "1px solid black",
-        display: "inline-block",
-        marginLeft: "5px",
-        padding: "2px",
-        backgroundColor: on ? "white" : "red"
+        width: '50px',
+        height: '30px',
+        border: '1px solid black',
+        display: 'inline-block',
+        marginLeft: '5px',
+        padding: '2px',
+        backgroundColor: on ? 'white' : 'red'
     }
 
     const indicatorStyle = {
-        width: "20px",
-        height: "20px",
-        borderRadius: "10px",
-        border: "1px solid black",
-        display: "inline-block",
-        marginLeft: "5px",
-        backgroundColor: on ? "green" : "red"
+        width: '20px',
+        height: '20px',
+        borderRadius: '10px',
+        border: '1px solid black',
+        display: 'inline-block',
+        marginLeft: '5px',
+        backgroundColor: on ? 'green' : 'red'
     }
 
     const onClicked = () => {

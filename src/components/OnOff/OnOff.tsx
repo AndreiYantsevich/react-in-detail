@@ -4,7 +4,7 @@ type OnOffPropsType = {
     onChange: (on: boolean) => void
 }
 
-export function OnOff(props: OnOffPropsType) {
+export const OnOff = (props: OnOffPropsType) => {
 
     const onStyle = {
         width: "50px",
