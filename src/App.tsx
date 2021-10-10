@@ -25,7 +25,7 @@ const App = () => {
             <Rating value={ratingValue}
                     onClick={setRatingValue}/>
             <UncontrolledRating/>
-            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
             <Accordion titleValue={'Menu'}
                        collapsed={accordionCollapsed}
                        onChange={() => {
@@ -36,7 +36,8 @@ const App = () => {
             />
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-            <Select value={value} onChange={setValue} items={[{value: '1', title: 'Minsk'}, {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
+            <Select value={value} onChange={setValue}
+                    items={[{value: '1', title: 'Minsk'}, {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
         </div>
     )
 }
