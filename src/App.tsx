@@ -6,13 +6,15 @@ import UncontrolledAccordion from './components/UncontrolledAccordion/Uncontroll
 import {OnOff} from './components/OnOff/OnOff';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import Select from './components/Select/Select';
 
 
 const App = () => {
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
-    let [accordionCollapsed, setAccordionCollapsed] = useState(false)
-    let [switchOn, setSwitchOn] = useState<boolean>(false)
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(4)
+    const [accordionCollapsed, setAccordionCollapsed] = useState(false)
+    const [switchOn, setSwitchOn] = useState<boolean>(false)
+    const [value, setValue] = useState('2')
 
     const onClickCallback = (id: number) => {
         alert(`Click ${id}!`)
@@ -34,6 +36,7 @@ const App = () => {
             />
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            <Select value={value} onChange={setValue} items={[{value: '1', title: 'Minsk'}, {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
         </div>
     )
 }
