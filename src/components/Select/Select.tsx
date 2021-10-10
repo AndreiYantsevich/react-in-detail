@@ -35,15 +35,24 @@ const Select = (props: SelectPropsType) => {
 
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-
-        }
-        for (let i=0;i<props.items.length;i++) {
-            if (props.items[i].value === hoveredElementValue) {
-                if (props.items[i+1]) {
-                    props.onChange(props.items[i+1].value)
+            for (let i = 0; i < props.items.length; i++) {
+                if (props.items[i].value === hoveredElementValue) {
+                    const pretendentElement = e.key === 'ArrowDown'
+                        ? props.items[i + 1]
+                        : props.items[i - 1]
+                    if (pretendentElement) {
+                        props.onChange(pretendentElement.value)
+                        return;
+                    }
                 }
-                break;
             }
+            if (!selectedItem) {
+                props.onChange(props.items[0].value)
+            }
+        }
+
+        if (e.key === 'Enter' || e.key === 'Escape') {
+            setActive(false)
         }
     }
 
@@ -55,10 +64,14 @@ const Select = (props: SelectPropsType) => {
                     active &&
                     <div className={styles.items}>
                         {props.items.map(i => <div
-                            onMouseEnter={() => {setHoveredElementValue(i.value)}}
-                            className={styles.item + " " + (hoveredItem === i ? styles.selected : "")}
+                            onMouseEnter={() => {
+                                setHoveredElementValue(i.value)
+                            }}
+                            className={styles.item + ' ' + (hoveredItem === i ? styles.selected : '')}
                             key={i.value}
-                            onClick={() => {onItemClick(i.value)}}
+                            onClick={() => {
+                                onItemClick(i.value)
+                            }}
                         >{i.title}
                         </div>)}
                     </div>
