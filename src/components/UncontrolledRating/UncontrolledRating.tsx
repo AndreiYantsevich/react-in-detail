@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 type RatingPropsType = {}
 
-export const UncontrolledRating = (props: RatingPropsType) => {
+export const UncontrolledRating = React.memo((props: RatingPropsType) => {
 
     let [value, setValue] = useState(0)
 
@@ -25,7 +25,7 @@ export const UncontrolledRating = (props: RatingPropsType) => {
             }}/>
         </div>
     )
-}
+})
 
 type StarPropsType = {
     selected: boolean

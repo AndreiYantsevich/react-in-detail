@@ -9,7 +9,7 @@ import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOf
 import Select from './components/Select/Select';
 
 
-const App = () => {
+const App = React.memo(() => {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     const [accordionCollapsed, setAccordionCollapsed] = useState(false)
@@ -40,6 +40,6 @@ const App = () => {
                     items={[{value: '1', title: 'Minsk'}, {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
         </div>
     )
-}
+})
 
 export default App;

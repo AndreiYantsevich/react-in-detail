@@ -1,11 +1,11 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 
 type OnOffPropsType = {
     onChange: (on: boolean) => void
 }
 
-export const UncontrolledOnOff = (props: OnOffPropsType) => {
+export const UncontrolledOnOff = React.memo((props: OnOffPropsType) => {
 
 
     let [on, setOn] = useState(false)  //hook
@@ -56,4 +56,4 @@ export const UncontrolledOnOff = (props: OnOffPropsType) => {
             <div style={indicatorStyle}></div>
         </div>
     )
-}
+})
