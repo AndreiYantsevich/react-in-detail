@@ -7,6 +7,7 @@ import {OnOff} from './components/OnOff/OnOff';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import Select from './components/Select/Select';
+import Clock from './components/Clock/Clock';
 
 
 const App = React.memo(() => {
@@ -38,7 +39,9 @@ const App = React.memo(() => {
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
             <Select value={value} onChange={setValue}
                     items={[{value: '1', title: 'Minsk'}, {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
+            <Clock/>
         </div>
+
     )
 })
 
