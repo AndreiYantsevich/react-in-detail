@@ -3,7 +3,7 @@ import './AnalogClock.css'
 
 type PropsType = {}
 
-const AnalogClock: React.FC<PropsType> = (props) => {
+const AnalogClock: React.FC<PropsType> = React.memo((props) => {
 
     const [state, setState] = useState(new Date())
 
@@ -13,9 +13,9 @@ const AnalogClock: React.FC<PropsType> = (props) => {
         }, 1000);
 
         return () => {
-            clearInterval(intervalID)
-        }
-    }, [])
+            clearInterval(intervalID);
+        };
+    }, []);
 
     return (
         <div className="clock">
@@ -51,6 +51,6 @@ const AnalogClock: React.FC<PropsType> = (props) => {
             <span className="eleven">11</span>
         </div>
     );
-};
+});
 
 export default AnalogClock;

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 type PropsType = {}
 
-const DigitalClock: React.FC<PropsType> = (props) => {
+const DigitalClock: React.FC<PropsType> = React.memo((props) => {
 
     const [state, setState] = useState(new Date())
 
@@ -21,6 +21,6 @@ const DigitalClock: React.FC<PropsType> = (props) => {
             <h1>{state.toLocaleTimeString()}</h1>
         </div>
     );
-};
+});
 
 export default DigitalClock;
